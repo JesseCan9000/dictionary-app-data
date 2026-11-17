@@ -29,6 +29,7 @@ Usage examples:
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import datetime as dt
 import gzip
 import hashlib
@@ -41,9 +42,11 @@ import shutil
 import struct
 import subprocess
 import sys
+import threading
 import time
 import urllib.error
 import urllib.request
+import zlib
 from pathlib import Path
 from typing import Any, Iterator
 
@@ -326,44 +329,106 @@ def extract_trimmed_pos_entry(raw_obj: dict[str, Any]) -> tuple[str, dict[str, A
 
 def stream_jsonl_lines_with_resume(url: str, max_retries: int = 6) -> Iterator[bytes]:
     """
-    Streams a remote JSONL file over HTTP without saving the raw file to disk.
-    Automatically resumes from the exact byte offset via HTTP Range if a socket resets.
+    Streams a remote `.jsonl.gz` (or `.jsonl`) file over HTTP without saving the raw dump to disk.
+    Uses fast C `curl` + `gzip -dc` pipeline when available, falling back to Python streaming zlib.
     """
-    byte_offset = 0
-    partial = b""
-    attempt = 0
+    is_gz = url.endswith(".gz")
+    curl_bin = shutil.which("curl")
+    gzip_bin = shutil.which("gzip")
 
-    while True:
-        headers = {"User-Agent": USER_AGENT}
-        if byte_offset > 0:
-            headers["Range"] = f"bytes={byte_offset}-"
+    if is_gz and curl_bin and gzip_bin:
+        for attempt in range(1, max_retries + 1):
+            curl_proc = subprocess.Popen(
+                [
+                    curl_bin,
+                    "-fsSL",
+                    "--retry",
+                    "4",
+                    "--retry-delay",
+                    "2",
+                    "-A",
+                    USER_AGENT,
+                    url,
+                ],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            gz_proc = subprocess.Popen(
+                [gzip_bin, "-dc"],
+                stdin=curl_proc.stdout,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            if curl_proc.stdout:
+                curl_proc.stdout.close()
 
-        req = urllib.request.Request(url, headers=headers)
+            try:
+                assert gz_proc.stdout is not None
+                for raw_line in gz_proc.stdout:
+                    ln = raw_line.strip()
+                    if ln:
+                        yield ln
+                gz_rc = gz_proc.wait()
+                curl_rc = curl_proc.wait()
+                if gz_rc == 0 and curl_rc == 0:
+                    return
+                err_msg = (
+                    (gz_proc.stderr.read().decode("utf-8", "ignore") if gz_proc.stderr else "")
+                    + " "
+                    + (curl_proc.stderr.read().decode("utf-8", "ignore") if curl_proc.stderr else "")
+                ).strip()
+            finally:
+                for p in (gz_proc, curl_proc):
+                    if p.poll() is None:
+                        p.kill()
+                        p.wait()
+
+            if attempt == max_retries:
+                raise RuntimeError(
+                    f"Failed streaming {url} after {max_retries} attempts: {err_msg}"
+                )
+            wait_s = min(15, 2**attempt)
+            print(
+                f"  [retry {attempt}/{max_retries}] Stream interrupted ({err_msg}); retrying in {wait_s}s...",
+                flush=True,
+            )
+            time.sleep(wait_s)
+        return
+
+    # Pure-Python streaming fallback (supports both .jsonl.gz and uncompressed .jsonl)
+    for attempt in range(1, max_retries + 1):
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        decomp = zlib.decompressobj(16 + zlib.MAX_WBITS) if is_gz else None
+        partial = b""
         try:
-            with urllib.request.urlopen(req, timeout=45) as resp:
-                attempt = 0
+            with urllib.request.urlopen(req, timeout=60) as resp:
                 while True:
                     chunk = resp.read(262_144)
                     if not chunk:
+                        if decomp:
+                            partial += decomp.flush()
                         if partial.strip():
-                            yield partial
+                            for ln in partial.split(b"\n"):
+                                if ln.strip():
+                                    yield ln
                         return
-                    byte_offset += len(chunk)
-                    data = partial + chunk
+                    raw_bytes = decomp.decompress(chunk) if decomp else chunk
+                    if not raw_bytes:
+                        continue
+                    data = partial + raw_bytes
                     lines = data.split(b"\n")
                     partial = lines.pop()
                     for ln in lines:
                         if ln.strip():
                             yield ln
-        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as exc:
-            attempt += 1
-            if attempt > max_retries:
+        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, zlib.error) as exc:
+            if attempt == max_retries:
                 raise RuntimeError(
-                    f"Failed streaming {url} at byte {byte_offset} after {max_retries} retries: {exc}"
+                    f"Failed streaming {url} after {max_retries} retries: {exc}"
                 ) from exc
             wait_s = min(15, 2**attempt)
             print(
-                f"  [retry {attempt}/{max_retries}] Stream interrupted at {byte_offset / 1e6:.1f} MB ({exc}); resuming in {wait_s}s...",
+                f"  [retry {attempt}/{max_retries}] Stream error ({exc}); retrying in {wait_s}s...",
                 flush=True,
             )
             time.sleep(wait_s)
@@ -945,6 +1010,12 @@ def main() -> int:
         action="store_true",
         help="Keep generated dist/*.kdict and dist/*.kdict.gz on local disk after uploading.",
     )
+    parser.add_argument(
+        "--jobs",
+        type=int,
+        default=1,
+        help="Number of concurrent language workers when building multiple languages (default: 1).",
+    )
 
     args = parser.parse_args()
     languages = load_languages()
@@ -985,18 +1056,28 @@ def main() -> int:
         print("Nothing to build (all requested languages are already up to date).")
         return 0
 
+    jobs = max(1, min(args.jobs, len(targets), 6))
     print(
-        f"Selected {len(targets)} language(s): {', '.join(t['code'] for t in targets)}",
+        f"Selected {len(targets)} language(s) with {jobs} worker(s): {', '.join(t['code'] for t in targets)}",
         flush=True,
     )
 
-    for idx, lang in enumerate(targets, 1):
+    manifest_lock = threading.Lock()
+
+    def process_one(idx_and_lang: tuple[int, dict[str, Any]]) -> None:
+        idx, lang = idx_and_lang
         code = lang["code"]
-        print(f"\n[{idx}/{len(targets)}] Processing {lang['name']} ({code})...", flush=True)
+        print(
+            f"\n[{idx}/{len(targets)}] Processing {lang['name']} ({code})...",
+            flush=True,
+        )
         kdict_path, gz_path, meta = build_language_pack(lang)
 
         if not args.no_upload:
-            print(f"  [{code}] Uploading {gz_path.name} to GitHub Release {meta['releaseTag']}...", flush=True)
+            print(
+                f"  [{code}] Uploading {gz_path.name} to GitHub Release {meta['releaseTag']}...",
+                flush=True,
+            )
             download_url = publish_github_release(args.repo, gz_path, meta)
             meta["downloadUrl"] = download_url
         else:
@@ -1004,19 +1085,32 @@ def main() -> int:
                 f"https://github.com/{args.repo}/releases/download/{meta['releaseTag']}/{meta['assetName']}"
             )
 
-        manifest.setdefault("languages", {})[code] = meta
-        save_manifest(manifest)
+        with manifest_lock:
+            manifest.setdefault("languages", {})[code] = meta
+            save_manifest(manifest)
+            if not args.no_upload:
+                publish_manifest_release(args.repo)
 
-        if not args.no_upload:
-            publish_manifest_release(args.repo)
-
-        # Free local disk space after successful upload unless --keep-local or --no-upload
         if not args.keep_local and not args.no_upload:
             for p in (kdict_path, gz_path):
                 if p.exists():
                     p.unlink()
 
-    print("\nAll requested dictionary packs built and manifest updated successfully!", flush=True)
+    if jobs == 1:
+        for item in enumerate(targets, 1):
+            process_one(item)
+    else:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
+            futures = [
+                pool.submit(process_one, item) for item in enumerate(targets, 1)
+            ]
+            for fut in concurrent.futures.as_completed(futures):
+                fut.result()
+
+    print(
+        "\nAll requested dictionary packs built and manifest updated successfully!",
+        flush=True,
+    )
     return 0
 
 

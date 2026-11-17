@@ -5,7 +5,7 @@
     "name": "English",
     "nativeName": "English",
     "kaikkiName": "English",
-    "kaikkiUrl": "https://kaikki.org/dictionary/English/kaikki.org-dictionary-English.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/English/kaikki.org-dictionary-English.jsonl.gz"
   },
   {
     "rank": 2,
@@ -13,7 +13,7 @@
     "name": "Spanish",
     "nativeName": "español",
     "kaikkiName": "Spanish",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Spanish/kaikki.org-dictionary-Spanish.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Spanish/kaikki.org-dictionary-Spanish.jsonl.gz"
   },
   {
     "rank": 3,
@@ -21,7 +21,7 @@
     "name": "French",
     "nativeName": "français",
     "kaikkiName": "French",
-    "kaikkiUrl": "https://kaikki.org/dictionary/French/kaikki.org-dictionary-French.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/French/kaikki.org-dictionary-French.jsonl.gz"
   },
   {
     "rank": 4,
@@ -29,7 +29,7 @@
     "name": "German",
     "nativeName": "Deutsch",
     "kaikkiName": "German",
-    "kaikkiUrl": "https://kaikki.org/dictionary/German/kaikki.org-dictionary-German.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/German/kaikki.org-dictionary-German.jsonl.gz"
   },
   {
     "rank": 5,
@@ -37,7 +37,7 @@
     "name": "Italian",
     "nativeName": "italiano",
     "kaikkiName": "Italian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Italian/kaikki.org-dictionary-Italian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Italian/kaikki.org-dictionary-Italian.jsonl.gz"
   },
   {
     "rank": 6,
@@ -45,7 +45,7 @@
     "name": "Portuguese",
     "nativeName": "português",
     "kaikkiName": "Portuguese",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Portuguese/kaikki.org-dictionary-Portuguese.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Portuguese/kaikki.org-dictionary-Portuguese.jsonl.gz"
   },
   {
     "rank": 7,
@@ -53,7 +53,7 @@
     "name": "Russian",
     "nativeName": "русский",
     "kaikkiName": "Russian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Russian/kaikki.org-dictionary-Russian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Russian/kaikki.org-dictionary-Russian.jsonl.gz"
   },
   {
     "rank": 8,
@@ -61,7 +61,7 @@
     "name": "Chinese",
     "nativeName": "中文",
     "kaikkiName": "Chinese",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Chinese/kaikki.org-dictionary-Chinese.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Chinese/kaikki.org-dictionary-Chinese.jsonl.gz"
   },
   {
     "rank": 9,
@@ -69,7 +69,7 @@
     "name": "Japanese",
     "nativeName": "日本語",
     "kaikkiName": "Japanese",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Japanese/kaikki.org-dictionary-Japanese.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Japanese/kaikki.org-dictionary-Japanese.jsonl.gz"
   },
   {
     "rank": 10,
@@ -77,7 +77,7 @@
     "name": "Korean",
     "nativeName": "한국어",
     "kaikkiName": "Korean",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Korean/kaikki.org-dictionary-Korean.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Korean/kaikki.org-dictionary-Korean.jsonl.gz"
   },
   {
     "rank": 11,
@@ -85,7 +85,7 @@
     "name": "Arabic",
     "nativeName": "العربية",
     "kaikkiName": "Arabic",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Arabic/kaikki.org-dictionary-Arabic.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Arabic/kaikki.org-dictionary-Arabic.jsonl.gz"
   },
   {
     "rank": 12,
@@ -93,7 +93,7 @@
     "name": "Hindi",
     "nativeName": "हिन्दी",
     "kaikkiName": "Hindi",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Hindi/kaikki.org-dictionary-Hindi.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Hindi/kaikki.org-dictionary-Hindi.jsonl.gz"
   },
   {
     "rank": 13,
@@ -101,7 +101,7 @@
     "name": "Dutch",
     "nativeName": "Nederlands",
     "kaikkiName": "Dutch",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Dutch/kaikki.org-dictionary-Dutch.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Dutch/kaikki.org-dictionary-Dutch.jsonl.gz"
   },
   {
     "rank": 14,
@@ -109,7 +109,7 @@
     "name": "Swedish",
     "nativeName": "svenska",
     "kaikkiName": "Swedish",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Swedish/kaikki.org-dictionary-Swedish.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Swedish/kaikki.org-dictionary-Swedish.jsonl.gz"
   },
   {
     "rank": 15,
@@ -117,7 +117,7 @@
     "name": "Polish",
     "nativeName": "polski",
     "kaikkiName": "Polish",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Polish/kaikki.org-dictionary-Polish.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Polish/kaikki.org-dictionary-Polish.jsonl.gz"
   },
   {
     "rank": 16,
@@ -125,7 +125,7 @@
     "name": "Turkish",
     "nativeName": "Türkçe",
     "kaikkiName": "Turkish",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Turkish/kaikki.org-dictionary-Turkish.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Turkish/kaikki.org-dictionary-Turkish.jsonl.gz"
   },
   {
     "rank": 17,
@@ -133,7 +133,7 @@
     "name": "Vietnamese",
     "nativeName": "Tiếng Việt",
     "kaikkiName": "Vietnamese",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Vietnamese/kaikki.org-dictionary-Vietnamese.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Vietnamese/kaikki.org-dictionary-Vietnamese.jsonl.gz"
   },
   {
     "rank": 18,
@@ -141,7 +141,7 @@
     "name": "Indonesian",
     "nativeName": "Bahasa Indonesia",
     "kaikkiName": "Indonesian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Indonesian/kaikki.org-dictionary-Indonesian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Indonesian/kaikki.org-dictionary-Indonesian.jsonl.gz"
   },
   {
     "rank": 19,
@@ -149,7 +149,7 @@
     "name": "Greek",
     "nativeName": "Ελληνικά",
     "kaikkiName": "Greek",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Greek/kaikki.org-dictionary-Greek.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Greek/kaikki.org-dictionary-Greek.jsonl.gz"
   },
   {
     "rank": 20,
@@ -157,7 +157,7 @@
     "name": "Latin",
     "nativeName": "Latina",
     "kaikkiName": "Latin",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Latin/kaikki.org-dictionary-Latin.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Latin/kaikki.org-dictionary-Latin.jsonl.gz"
   },
   {
     "rank": 21,
@@ -165,7 +165,7 @@
     "name": "Finnish",
     "nativeName": "suomi",
     "kaikkiName": "Finnish",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Finnish/kaikki.org-dictionary-Finnish.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Finnish/kaikki.org-dictionary-Finnish.jsonl.gz"
   },
   {
     "rank": 22,
@@ -173,7 +173,7 @@
     "name": "Czech",
     "nativeName": "čeština",
     "kaikkiName": "Czech",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Czech/kaikki.org-dictionary-Czech.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Czech/kaikki.org-dictionary-Czech.jsonl.gz"
   },
   {
     "rank": 23,
@@ -181,7 +181,7 @@
     "name": "Romanian",
     "nativeName": "română",
     "kaikkiName": "Romanian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Romanian/kaikki.org-dictionary-Romanian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Romanian/kaikki.org-dictionary-Romanian.jsonl.gz"
   },
   {
     "rank": 24,
@@ -189,7 +189,7 @@
     "name": "Hungarian",
     "nativeName": "magyar",
     "kaikkiName": "Hungarian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Hungarian/kaikki.org-dictionary-Hungarian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Hungarian/kaikki.org-dictionary-Hungarian.jsonl.gz"
   },
   {
     "rank": 25,
@@ -197,7 +197,7 @@
     "name": "Ukrainian",
     "nativeName": "українська",
     "kaikkiName": "Ukrainian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Ukrainian/kaikki.org-dictionary-Ukrainian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Ukrainian/kaikki.org-dictionary-Ukrainian.jsonl.gz"
   },
   {
     "rank": 26,
@@ -205,7 +205,7 @@
     "name": "Catalan",
     "nativeName": "català",
     "kaikkiName": "Catalan",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Catalan/kaikki.org-dictionary-Catalan.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Catalan/kaikki.org-dictionary-Catalan.jsonl.gz"
   },
   {
     "rank": 27,
@@ -213,7 +213,7 @@
     "name": "Danish",
     "nativeName": "dansk",
     "kaikkiName": "Danish",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Danish/kaikki.org-dictionary-Danish.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Danish/kaikki.org-dictionary-Danish.jsonl.gz"
   },
   {
     "rank": 28,
@@ -221,7 +221,7 @@
     "name": "Norwegian",
     "nativeName": "norsk",
     "kaikkiName": "Norwegian Bokmål",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Norwegian%20Bokm%C3%A5l/kaikki.org-dictionary-NorwegianBokm%C3%A5l.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Norwegian%20Bokm%C3%A5l/kaikki.org-dictionary-NorwegianBokm%C3%A5l.jsonl.gz"
   },
   {
     "rank": 29,
@@ -229,7 +229,7 @@
     "name": "Hebrew",
     "nativeName": "עברית",
     "kaikkiName": "Hebrew",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Hebrew/kaikki.org-dictionary-Hebrew.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Hebrew/kaikki.org-dictionary-Hebrew.jsonl.gz"
   },
   {
     "rank": 30,
@@ -237,7 +237,7 @@
     "name": "Thai",
     "nativeName": "ไทย",
     "kaikkiName": "Thai",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Thai/kaikki.org-dictionary-Thai.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Thai/kaikki.org-dictionary-Thai.jsonl.gz"
   },
   {
     "rank": 31,
@@ -245,7 +245,7 @@
     "name": "Persian",
     "nativeName": "فارسی",
     "kaikkiName": "Persian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Persian/kaikki.org-dictionary-Persian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Persian/kaikki.org-dictionary-Persian.jsonl.gz"
   },
   {
     "rank": 32,
@@ -253,7 +253,7 @@
     "name": "Esperanto",
     "nativeName": "Esperanto",
     "kaikkiName": "Esperanto",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Esperanto/kaikki.org-dictionary-Esperanto.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Esperanto/kaikki.org-dictionary-Esperanto.jsonl.gz"
   },
   {
     "rank": 33,
@@ -261,7 +261,7 @@
     "name": "Galician",
     "nativeName": "galego",
     "kaikkiName": "Galician",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Galician/kaikki.org-dictionary-Galician.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Galician/kaikki.org-dictionary-Galician.jsonl.gz"
   },
   {
     "rank": 34,
@@ -269,7 +269,7 @@
     "name": "Serbo-Croatian",
     "nativeName": "srpskohrvatski / српскохрватски",
     "kaikkiName": "Serbo-Croatian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Serbo-Croatian/kaikki.org-dictionary-SerboCroatian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Serbo-Croatian/kaikki.org-dictionary-SerboCroatian.jsonl.gz"
   },
   {
     "rank": 35,
@@ -277,7 +277,7 @@
     "name": "Bulgarian",
     "nativeName": "български",
     "kaikkiName": "Bulgarian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Bulgarian/kaikki.org-dictionary-Bulgarian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Bulgarian/kaikki.org-dictionary-Bulgarian.jsonl.gz"
   },
   {
     "rank": 36,
@@ -285,7 +285,7 @@
     "name": "Tagalog",
     "nativeName": "Tagalog",
     "kaikkiName": "Tagalog",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Tagalog/kaikki.org-dictionary-Tagalog.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Tagalog/kaikki.org-dictionary-Tagalog.jsonl.gz"
   },
   {
     "rank": 37,
@@ -293,7 +293,7 @@
     "name": "Malay",
     "nativeName": "Bahasa Melayu",
     "kaikkiName": "Malay",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Malay/kaikki.org-dictionary-Malay.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Malay/kaikki.org-dictionary-Malay.jsonl.gz"
   },
   {
     "rank": 38,
@@ -301,7 +301,7 @@
     "name": "Bangla",
     "nativeName": "বাংলা",
     "kaikkiName": "Bengali",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Bengali/kaikki.org-dictionary-Bengali.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Bengali/kaikki.org-dictionary-Bengali.jsonl.gz"
   },
   {
     "rank": 39,
@@ -309,7 +309,7 @@
     "name": "Urdu",
     "nativeName": "اردو",
     "kaikkiName": "Urdu",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Urdu/kaikki.org-dictionary-Urdu.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Urdu/kaikki.org-dictionary-Urdu.jsonl.gz"
   },
   {
     "rank": 40,
@@ -317,7 +317,7 @@
     "name": "Tamil",
     "nativeName": "தமிழ்",
     "kaikkiName": "Tamil",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Tamil/kaikki.org-dictionary-Tamil.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Tamil/kaikki.org-dictionary-Tamil.jsonl.gz"
   },
   {
     "rank": 41,
@@ -325,7 +325,7 @@
     "name": "Telugu",
     "nativeName": "తెలుగు",
     "kaikkiName": "Telugu",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Telugu/kaikki.org-dictionary-Telugu.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Telugu/kaikki.org-dictionary-Telugu.jsonl.gz"
   },
   {
     "rank": 42,
@@ -333,7 +333,7 @@
     "name": "Swahili",
     "nativeName": "Kiswahili",
     "kaikkiName": "Swahili",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Swahili/kaikki.org-dictionary-Swahili.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Swahili/kaikki.org-dictionary-Swahili.jsonl.gz"
   },
   {
     "rank": 43,
@@ -341,7 +341,7 @@
     "name": "Irish",
     "nativeName": "Gaeilge",
     "kaikkiName": "Irish",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Irish/kaikki.org-dictionary-Irish.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Irish/kaikki.org-dictionary-Irish.jsonl.gz"
   },
   {
     "rank": 44,
@@ -349,7 +349,7 @@
     "name": "Welsh",
     "nativeName": "Cymraeg",
     "kaikkiName": "Welsh",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Welsh/kaikki.org-dictionary-Welsh.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Welsh/kaikki.org-dictionary-Welsh.jsonl.gz"
   },
   {
     "rank": 45,
@@ -357,7 +357,7 @@
     "name": "Icelandic",
     "nativeName": "íslenska",
     "kaikkiName": "Icelandic",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Icelandic/kaikki.org-dictionary-Icelandic.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Icelandic/kaikki.org-dictionary-Icelandic.jsonl.gz"
   },
   {
     "rank": 46,
@@ -365,7 +365,7 @@
     "name": "Lithuanian",
     "nativeName": "lietuvių",
     "kaikkiName": "Lithuanian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Lithuanian/kaikki.org-dictionary-Lithuanian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Lithuanian/kaikki.org-dictionary-Lithuanian.jsonl.gz"
   },
   {
     "rank": 47,
@@ -373,7 +373,7 @@
     "name": "Latvian",
     "nativeName": "latviešu",
     "kaikkiName": "Latvian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Latvian/kaikki.org-dictionary-Latvian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Latvian/kaikki.org-dictionary-Latvian.jsonl.gz"
   },
   {
     "rank": 48,
@@ -381,7 +381,7 @@
     "name": "Estonian",
     "nativeName": "eesti",
     "kaikkiName": "Estonian",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Estonian/kaikki.org-dictionary-Estonian.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Estonian/kaikki.org-dictionary-Estonian.jsonl.gz"
   },
   {
     "rank": 49,
@@ -389,7 +389,7 @@
     "name": "Slovak",
     "nativeName": "slovenčina",
     "kaikkiName": "Slovak",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Slovak/kaikki.org-dictionary-Slovak.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Slovak/kaikki.org-dictionary-Slovak.jsonl.gz"
   },
   {
     "rank": 50,
@@ -397,6 +397,6 @@
     "name": "Ancient Greek",
     "nativeName": "Ἀρχαία Ἑλληνική",
     "kaikkiName": "Ancient Greek",
-    "kaikkiUrl": "https://kaikki.org/dictionary/Ancient%20Greek/kaikki.org-dictionary-AncientGreek.jsonl"
+    "kaikkiUrl": "https://kaikki.org/dictionary/Ancient%20Greek/kaikki.org-dictionary-AncientGreek.jsonl.gz"
   }
 ]
